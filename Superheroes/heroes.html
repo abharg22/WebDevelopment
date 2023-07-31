@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<body>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/heroes-styles.css" />
@@ -7,7 +8,7 @@
     <title>Superheroes</title>
     <table>
         <tr>
-            <th id="special-header">Alias</th>
+            <th id="special-header" onclick="changeStyle()">Alias</th>
             <th>Name</th>
             <th>Superheros</th>
         </tr>
@@ -18,20 +19,30 @@
 
         </tr>
          <tr>
-            <td>Superman</td>
+            <td id="SuperPerson" onclick="changeText()">Superman</td>
             <td>Clark Kent</td>
             <td>Hes a God </td>
 
         </tr>
          <tr>
-            <td>The flash</td>
+            <td id='theFlash' onclick="changeText2()">The Flash</td>
             <td>Jay Garrick</td>
             <td>He is fast</td>
 
         </tr>
     </table>
-</head>
-<body>
-    
+    <script>
+        function changeStyle () {
+                console.log("testing exec of changeStyle");
+                document.getElementById('special-header').className='changed-style';
+            }
+            const changeText = function() {
+    console.log("testing exec of changeText");
+    document.getElementById('SuperPerson').textContent='A Super Person';
+}
+            
+const changeText2=()=>document.getElementById('theFlash').textContent='Jay - the Flash - Garrick';
+    </script>
+</head>  
 </body>
 </html>
